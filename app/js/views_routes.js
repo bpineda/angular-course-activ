@@ -27,18 +27,48 @@ config([
         ;
     }
   ]).
+service(
+                      'gitHubService',
+                      function()
+                      {
+                        this.name = 'Nombre';
+                        this.sayHello = function()
+                        {
+                          return "Hello " + this.name;
+                        }
+                      }
+        ).
 controller(
     'ViewsController',
-    function($scope)
-    {
-      $scope.name = 'Gerardo';
-      console.log('Loading Views Controller');
-    }
+    function( $scope,
+                          gitHubService
+                          
+                         )
+                        {
+                          console.log('Loading MyCtrl');
+                          console.log( gitHubService.sayHello() );
+                          console.log( gitHubService.name );
+                          gitHubService.name = 'Raymundo';
+                          console.log( gitHubService.name );
+                          $scope.name = 'brr';
+                          //$scope.hellos = 'Greetings';
+                          /*$scope.hellos = [
+                              helloWorldFromService.sayHello(),
+                              helloWorldFromFactory.sayHello(),
+                              helloWorldFromProvider.sayHello()
+                          ];*/
+                          $scope.showAlert = function()
+                          {
+
+                          }
+
+                        }
   ).
 controller(
     'ControllerController',
-    function($scope)
+    function($scope, gitHubService)
     {
+      //console.log();
       $scope.name = 'José';
       console.log('Loading Controller Controller');
       $scope.articles = [{name: 'Article1'},{name:'Article2'},{name:'Article3'}];

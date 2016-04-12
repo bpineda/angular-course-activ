@@ -5,4 +5,8 @@ Mi nombre es {{name}}
   <ul>
     <li ng-repeat="article in articles">{{article.name}}</li>
   </ul>
+  <select>
+    <option ng-repeat="technology in technologies" value="{{technology.id}}">{{technology.name}}</option>
+  </select>
+  <button class="button" ng-click="showAlert()">Muestra alerta</button>
 </div>

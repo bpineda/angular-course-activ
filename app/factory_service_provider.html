@@ -55,11 +55,63 @@
     <script>
       var myApp = angular.module('myApp', []);
 
+      
+
+      myApp.service(
+                      'helloWorldFromService',
+                      function()
+                      {
+                        this.sayHello = function()
+                        {
+                          return "From Service";
+                        }
+                      }
+        );
+
+      myApp.factory(  
+                      'helloWorldFromFactory',
+                      function()
+                      {
+                        return {
+                            sayHello: function()
+                            {
+                              return "From factory";
+                            }
+                        };
+                      }
+
+      );
+
+      myApp.provider(
+                      'helloWorldFromProvider',
+                      function()
+                      {
+                        this.$get = function()
+                        {
+                          return {
+                            sayHello: function()
+                            {
+                              return "From Provider";
+                            }
+                          }
+                        };
+                      }
+        );
+
       myApp.controller( 'MyCtrl',
-                        function( $scope )
+                        function( $scope,
+                          helloWorldFromService,
+                          helloWorldFromFactory,
+                          helloWorldFromProvider
+                         )
                         {
                           console.log('Loading MyCtrl');
-                          $scope.hellos = 'Greetings';
+                          //$scope.hellos = 'Greetings';
+                          $scope.hellos = [
+                              helloWorldFromService.sayHello(),
+                              helloWorldFromFactory.sayHello(),
+                              helloWorldFromProvider.sayHello()
+                          ];
 
                         }
       )

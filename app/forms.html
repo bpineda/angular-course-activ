@@ -9,19 +9,25 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <link href='./css/app.css' rel='stylesheet' type='text/css'>
     <style type="text/css">
-    .css-form input.ng-invalid.ng-touched {
+    .css-form input.ng-invalid.ng-touched 
+    {
+      background-color: #FA787E;
     }
 
-    .css-form input.ng-valid.ng-touched {
+    .css-form input.ng-valid.ng-touched 
+    {
+      background-color: #78FA89; 
     }
 
     input.ng-pristine {
+      background-color: lightblue;
     }
     input.ng-dirty {
+      background-color: pink;
     }
 </style>
   </head>
-  <body>
+  <body ng-app="formExample">
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -46,14 +52,15 @@
       <br>
       <div class="callout">
         <h3>Other Content</h3>
-        <div>
-          <form name="myForm" novalidate class="css-form">
-            Name: <input type="text" />
+        <div ng-controller="ExampleController">
+          <form ng-form="myForm" novalidate class="css-form">
+            Name: <input type="text" ng-model="user.name" required />
             <span>Verifique el nombre</span><br/>
-            E-mail: <input type="email" />
-            Gender: <input type="radio" /> male
-            <input type="radio" value="female" /> female<br />
-            <input class="button primary" type="submit"  value="Save" />
+            E-mail: <input type="email" ng-model="user.email" required />
+            Gender: 
+            <input type="radio" ng-model="user.gender" value="male" /> male
+            <input type="radio" ng-model="user.gender" value="female" /> female<br />
+            <input ng-disabled="!myForm.$valid" class="button primary" ng-click="myForm.$valid && update(user)" type="submit"  value="Save" />
           </form>
           <pre>user = {{user | json}}</pre>
         </div>
@@ -74,7 +81,19 @@
       $(document).foundation();
     </script>
     <script>
-      
+      angular.module('formExample', []).
+      controller('ExampleController', [ '$scope', 
+                                        function($scope)
+                                        {
+                                          //$scope.user = [{name: 'Oscar'}];
+                                          $scope.update = function(user)
+                                          {
+                                              //console.log(user);
+                                              alert('Enviando Datos');
+                                          };
+                                        }
+                                        ]
+        );
     </script>
   </body>
 </html>
