@@ -1,0 +1,16 @@
+<h3>Login</h3>
+
+<div class="row">
+      <div class="large-12 columns">
+        <h5>Try logging in</h5>
+        <form name="formLogin" novalidate>
+          <label>User:</label>
+          <input type="text" ng-model="user.name" required />
+          <label>Password:</label>
+          <input type="password" ng-model="user.password" required />
+          <button class="button success" ng-click="formLogin.$valid  && authenticate()">LOGIN</button>
+        </form>
+        <!--<p><a class="button success" ng-click="authenticate()">LOGIN</a></p>-->
+        </h4>
+      </div>
+    </div>
