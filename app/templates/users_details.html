@@ -1,1 +1,11 @@
 <h3>User details</h3>
+<div>
+  <form name="formUser" novalidate>
+    <label>Name</label>
+    <input type="text" ng-model="user.name" required />
+    <label>Email</label>
+    <input type="text" ng-model="user.email" required />
+    <button class="button success" ng-click="formUser.$valid && save()">SAVE</button>
+    <button class="button secondary" ng-click="cancel()">CANCEL</button>
+  </form>
+</div>

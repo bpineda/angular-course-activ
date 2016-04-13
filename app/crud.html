@@ -10,6 +10,24 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <link href='./css/app.css' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    .css-form input.ng-invalid.ng-touched 
+    {
+      background-color: #FA787E;
+    }
+
+    .css-form input.ng-valid.ng-touched 
+    {
+      background-color: #78FA89; 
+    }
+
+    input.ng-pristine {
+      background-color: lightblue;
+    }
+    input.ng-dirty {
+      background-color: pink;
+    }
+</style>
   </head>
   <body ng-app="myApp">
     <div class="top-bar">
@@ -45,5 +63,9 @@
     </script>
     
     <script src="js/crud.js"></script>
+    <script src="js/controllers/UsersListCtrl.js"></script>
+    <script src="js/controllers/UsersDetailsCtrl.js"></script>
+    <script src="js/controllers/UsersNewCtrl.js"></script>
+    <script src="js/services/User.js"></script>
   </body>
 </html>
