@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AngularJS | Views</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <link href='./css/app.css' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-app="myApp">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li><a href="#/">Directives</a></li>
+          <li><a href="#/controllers">Controllers</a></li>
+          <li><a href="#/views">Views</a></li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#/logged">Index</a></li>
+          <li><a href="#/login">Login</a></li>
+          <li><a href="#/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div >
+      <div class="row column text-center">
+        <h2>Services</h2>
+        <hr>
+      </div>
+      <div class="row column">
+        <div ng-view>Loading...</div>
+        <br/>
+      </div>
+    </div>
+    <hr>
+    <div class="callout large secondary">
+    <div class="row">
+      <div class="large-12 columns">
+        <h5>AngularJS Course</h5>
+        <p>examples by: <a href="https://twitter.com/bpineda">@bpineda</a></p>
+        </h4>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    
+    <script src="js/app_services.js"></script>
+  </body>
+</html>
