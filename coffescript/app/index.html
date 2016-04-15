@@ -11,6 +11,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <link href='./css/app.css' rel='stylesheet' type='text/css'>
+    <link href='./css/animate.css' rel='stylesheet' type='text/css'>
     <style>
     .text-center {
       text-align: center;
@@ -20,12 +21,12 @@
       cursor: pointer;
     }
 
-    .fade {
-      transition: 0.2s linear all;
-      -webkit-transition: 0.2s linear all;
+    .hinge {
+      transition: 1s linear all;
+      -webkit-transition: 1s linear all;
     }
 
-    .fade.ng-enter {
+    .hinge.ng-enter {
       opacity: 0;
     }
 
@@ -65,5 +66,6 @@
     </script>
     
     <script src="js/app.js"></script>
+    <script src="js/controllers/UsersCtrl.js"></script>
   </body>
 </html>

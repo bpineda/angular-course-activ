@@ -1,13 +1,13 @@
 <h3>User name</h3>
 <label>Search</label>
-<input type="text" />
-<button class="button">Show alert</button>
-<button class="button success">Load data</button>
+<input type="text" ng-model="search" />
+<button class="button" ng-click="showAlert()">Show alert</button>
+<button class="button success" ng-click="load_data()">Load data</button>
 <table border="1">
   <tr>
     <th>Technology</th>
   </tr>
-  <tr>
-    <td></td>
+  <tr class="animated fadeInRightBig" ng-animate="'animate'" ng-repeat="technology in technologies | filter:search">
+    <td>{{technology}}</td>
   </tr>
 </table>
