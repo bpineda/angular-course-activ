@@ -3,10 +3,12 @@
 angular.module('myApp')
 
 .controller('ReposCtrl', [ '$scope',
-                              function( $scope ) 
+                            'GitHub',
+                              function( $scope, GitHub ) 
                               {
 
                                 console.log('ReposCtrl'); 
+                                $scope.repos = GitHub.repos;
                                 
 
                               }
