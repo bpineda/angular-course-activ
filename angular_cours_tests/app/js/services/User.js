@@ -20,7 +20,8 @@ angular.module('userService',[])
                             method: 'POST',
                             url: '/api/index.php/users/update/' + id,
                             headers: {'Content-type' : 'application/x-www-form-urlencoded'},
-                            data: $.param(attributeData)
+                            //data: $.param(attributeData)
+                            data: {}
                           });
                       },
                 create: function(attributeData)
@@ -29,7 +30,9 @@ angular.module('userService',[])
                             method: 'PUT',
                             url: '/api/index.php/users',
                             headers: {'Content-type' : 'application/x-www-form-urlencoded'},
-                            data: $.param(attributeData)
+                            //data: $.param(attributeData)
+                            //data: $.param(attributeData)
+                            data: { name: 'ber', email: 'correo' }
                           });
                       },
                 destroy: function(id)

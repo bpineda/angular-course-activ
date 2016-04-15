@@ -13,6 +13,7 @@ angular.module('myApp')
                                 console.log('UsersDetailsCtrl');
                                 console.log(User.test);
                                 $scope.user = null;
+                                $scope.users = null;
 
                                 $scope.user_details = function()
                                 {
@@ -24,6 +25,17 @@ angular.module('myApp')
                                                   }
                                           );
                                 };
+
+                                $scope.users_list = function()
+                                {
+                                  console.log('getting user list');
+                                  User.get_users()
+                                      .success( function(data)
+                                              {
+                                                console.log(data);
+                                                $scope.users = data.users;
+                                              });
+                                }
 
                                 $scope.user_details();
 

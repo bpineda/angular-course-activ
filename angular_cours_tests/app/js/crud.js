@@ -30,9 +30,26 @@ config([
   ])
 ;
 
-angular.module('myApp').
+/*angular.module('myApp').
   filter('capitalize_first', function() {
     return function(input) {
       return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
     }
-  });
+  });*/
+
+var myApp = angular.module('myApp'); 
+myApp.filter( 'capitalize_first',
+              function() 
+              {
+                return  function(input) 
+                        {
+                          input = input.toLowerCase();
+                          return (!!input) ? input.replace(/(?:^|\s)\S/g, 
+                            function(a) 
+                            {
+
+                              return a.toUpperCase();
+
+                            }): '';
+                } 
+              });
